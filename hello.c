@@ -138,9 +138,10 @@ static int __init hello_init(void)
 
     printk(KERN_INFO "Load hello\n");
 
-    devno = MKDEV(111, 0);
+    // devno = MKDEV(111, 0);
     //向系统申请设备号
-    if (ret = register_chrdev_region(devno, 1, "hello") < 0)
+    // if ((ret = register_chrdev_region(devno, 1, "hello")) < 0)
+    if((ret = alloc_chrdev_region(&devno, 0, 1, "hello")) < 0)
     {
         return ret;
     }
