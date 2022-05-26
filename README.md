@@ -3,7 +3,7 @@
 运行:
 
 ```shell
-sh driver.sh
+./driver.sh
 ```
 
 运行效果:
