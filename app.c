@@ -29,6 +29,13 @@ int main()
     n = write(fd, "hello world from user2!", 23);
     printf("write length: %d\n", n);
 
+    lseek64(fd, 0, 0);
+    printf("read: ");
+    while ((m = read(fd, buf, 1)) > 0 && buf[0] != '\0') {
+        printf("%c", buf[0]);
+    }
+    printf("\n");
+
     close(fd);
     return 0;
 }
